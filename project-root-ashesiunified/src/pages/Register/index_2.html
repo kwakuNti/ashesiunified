@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Ashesi•Unified</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="URL_where_the_form_data_should_be_submitted" method="POST" id="registerForm" name="registerForm">
+            <h1>Register</h1>
+
+            <!-- First Name -->
+            <div class="input-box">
+                <input type="text" placeholder="First Name" name="first_name" required id="first_name">
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <!-- Last Name -->
+            <div class="input-box">
+                <input type="text" placeholder="Last Name" name="last_name" required id="last_name">
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <!-- Email -->
+            <div class="input-box">
+                <input type="email" placeholder="Email" name="email" id="email" required pattern="[a-zA-Z0-9._%+-]+@ashesi\.edu\.gh$" title="Please enter a valid Ashesi University email address">
+                <i class='bx bx-mail-send'></i>
+            </div>
+
+            <!-- Year Group -->
+            <div class="input-box">
+                <input type="number" placeholder="Year Group" name="year_group" id="year_group" required min="1900" max="2099">
+                <i class='bx bx-calendar'></i>
+            </div>
+
+            <!-- Course / Program -->
+            <div class="input-box">
+                <input type="text" placeholder="Course / Program" name="course_program" id="course_program" required>
+                <i class='bx bx-book-reader'></i>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="input-box">
+                <input type="tel" placeholder="Phone Number" name="phone_number" id="phone_number" required pattern="[0-9]{10,14}" title="Please enter a valid phone number">
+                <i class='bx bx-phone'></i>
+            </div>
+
+            <!-- Password -->
+            <div class="input-box">
+                <input type="password" placeholder="Password" name="password" id="password" required pattern=".{8,}" title="Password must be at least 8 characters long">
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="input-box">
+                <input type="password" placeholder="Confirm Password" name="confirm_password" id="confirm_password" required pattern=".{8,}" title="Password must be at least 8 characters long">
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <!-- Remember Me & Forgot Password -->
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember Me</label>
+                <a href="#">Forgot Password</a>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn" id="register" name="register">Sign Up</button>
+
+            <!-- Login Link -->
+            <div class="register-link">
+                <p>Already have an account? <a href="#">Login</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
