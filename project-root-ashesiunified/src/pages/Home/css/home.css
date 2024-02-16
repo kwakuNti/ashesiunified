@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.picture{
+    background-image: url('../images/Ashesi_Campus_3-min.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.f{
+    height: 40vh;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    
+}
+.filler{
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+}
+
+.container {
+    text-align: center;
+    margin: auto;
+    max-width: 600px;
+    padding: 0 20px;
+    margin-top: auto;
+}
+#con h1{
+    color: white;
+    font-size: 2.0rem;
+    margin-top: 10px;
+}
+.container h1 {
+    color: white;
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.feature-menu{
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+    background-color: beige;
+}
+
+.feature-menu .feature{
+    max-width: 20%;
+    margin-bottom: 0;
+}
+
+.sec3 h1{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: -15px;
+}
+button {
+    background-color: white;
+    border: none;
+    color: rgb(18, 85, 18);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #e3c51c;
+}
+
+
+p{
+    color: white;
+    font-size: 20px;
+}
+
+.feature p{
+    color: black;
+    text-align: center;
+}
+.feature h3{
+    text-align: center;
+}
+
+.feature{
+    line-height: 2rem;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    padding: 15px 32px;
+}
+.sec3{
+    background-color: beige;
+}
+.sec3 h1{
+    margin-top: -20px;
+}

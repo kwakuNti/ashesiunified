@@ -2,14 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
   body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(/src/pages/Login/img/former_hakuna_lounge_students_sitting_studying.jpeg) no-repeat;
+    background: url(../images/former_hakuna_lounge_students_sitting_studying.jpeg) no-repeat;
     background-size: cover;
     background-position: center;
   }
@@ -17,6 +17,7 @@
     width: 420px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
+    -webkit-backdrop-filter: blur(9px);
     backdrop-filter: blur(9px);
     color: #fff;
     border-radius: 12px;
@@ -72,6 +73,13 @@
     text-decoration: none;
   
   }
+  .feedback {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
   .remember-forgot a:hover{
     text-decoration: underline;
   }
