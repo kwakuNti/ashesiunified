@@ -1,4 +1,18 @@
+function toggleDetails() {
+    var studentDetails = document.getElementById("studentDetails");
+    var staffDetails = document.getElementById("staffDetails");
 
+    if (document.getElementById("student_role").checked) {
+        studentDetails.style.display = "block";
+        staffDetails.style.display = "none";
+    } else if (document.getElementById("staff_role").checked) {
+        studentDetails.style.display = "none";
+        staffDetails.style.display = "block";
+    }
+}
+    
+    
+    
     document.getElementById("registerForm").addEventListener("submit", function(event) {
         var firstNameInput = document.getElementById("first_name");
         var lastNameInput = document.getElementById("surname");
