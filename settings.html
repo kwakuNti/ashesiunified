@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings Page</title>
+    <style>
+        /* Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            background-image: url(OIP.jpeg);
+        }
+
+        header {
+            background-color: #232222;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(148, 164, 149, 0.7); /* Semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+
+
+        .settings {
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .option-container {
+            margin-bottom: 20px;
+            flex: 0 0 calc(50% - 20px); /* Two options side by side with a margin of 20px between them */
+            max-width: calc(50% - 20px);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        select, input[type="color"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .color-preview {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Settings</h1>
+    </header>
+    <main>
+        <div class="settings">
+            <div class="option-container">
+                <h2>Theme</h2>
+                <label for="theme">Select Theme:</label>
+                <select id="theme">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+            </div>
+            <div class="option-container">
+                <h2>Color Scheme</h2>
+                <label for="colorScheme">Select Color Scheme:</label>
+                <select id="colorScheme">
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="red">Red</option>
+                    <option value="custom">Custom</option>
+                </select>
+                <input type="color" id="customColor" style="display: none;">
+                <div class="color-preview" id="colorPreview"></div>
+            </div>
+            <div class="option-container">
+                <h2>Font Size</h2>
+                <label for="fontSize">Select Font Size:</label>
+                <select id="fontSize">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            <div class="option-container">
+                <h2>Enable Features</h2>
+                <label>
+                    <input type="checkbox" id="notifications"> Enable Notifications
+                </label>
+            </div>
+        </div>
+        <button onclick="saveChanges()">Save Changes</button>
+    </main>
+    <script>
+        // JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeSelect = document.getElementById('theme');
+            const colorSchemeSelect = document.getElementById('colorScheme');
+            const customColorInput = document.getElementById('customColor');
+            const fontSizeSelect = document.getElementById('fontSize');
+            const notificationsCheckbox = document.getElementById('notifications');
+
+            // Load user preferences
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const savedColorScheme = localStorage.getItem('colorScheme') || 'blue';
+            const savedCustomColor = localStorage.getItem('customColor') || '#0000ff';
+            const savedFontSize = localStorage.getItem('fontSize') || 'medium';
+            const savedNotifications = localStorage.getItem('notifications') === 'true';
+
+            // Set initial values
+            themeSelect.value = savedTheme;
+            colorSchemeSelect.value = savedColorScheme;
+            customColorInput.value = savedCustomColor;
+            applyColorPreview(savedColorScheme);
+            document.body.style.fontSize = savedFontSize === 'small' ? '14px' : (savedFontSize === 'medium' ? '16px' : '18px');
+            notificationsCheckbox.checked = savedNotifications;
+
+            // Add event listeners to settings elements
+            themeSelect.addEventListener('change', saveChanges);
+            colorSchemeSelect.addEventListener('change', saveChanges);
+            customColorInput.addEventListener('input', function () {
+                applyColorPreview('custom');
+                saveChanges();
+            });
+            fontSizeSelect.addEventListener('change', saveChanges);
+            notificationsCheckbox.addEventListener('change', saveChanges);
+        });
+
+        // Function to apply color preview
+        function applyColorPreview(colorScheme) {
+            if (colorScheme === 'custom') {
+                const customColorInput = document.getElementById('customColor');
+                const colorPreview = document.getElementById('colorPreview');
+                colorPreview.style.backgroundColor = savedColorScheme;
+            }
+        }
+
+        // Function to save changes
+        function saveChanges() {
+            const
+
+ themeSelect = document.getElementById('theme');
+            const colorSchemeSelect = document.getElementById('colorScheme');
+            const customColorInput = document.getElementById('customColor');
+            const fontSizeSelect = document.getElementById('fontSize');
+            const notificationsCheckbox = document.getElementById('notifications');
+
+            // Save user preferences
+            localStorage.setItem('theme', themeSelect.value);
+            localStorage.setItem('colorScheme', colorSchemeSelect.value);
+            localStorage.setItem('customColor', customColorInput.value);
+            localStorage.setItem('fontSize', fontSizeSelect.value);
+            localStorage.setItem('notifications', notificationsCheckbox.checked);
+
+            // Apply changes dynamically
+            applyColorPreview(colorSchemeSelect.value);
+            document.body.style.fontSize = fontSizeSelect.value === 'small' ? '14px' : (fontSizeSelect.value === 'medium' ? '16px' : '18px');
+        }
+    </script>
+</body>
+</html>
+```
+
