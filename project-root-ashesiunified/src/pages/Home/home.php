@@ -21,8 +21,8 @@
                     <li><a href="#">About</a></li>
                     <li><a href="https://nkansahclifford.wixstudio.io/ashesiunified">Know more</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="../Login/Login.html">Log In</a></li>
-                    <li><a href="../Register/Register.html">Register</a></li>
+                    <li><a href="../Login/Login.php">Log In</a></li>
+                    <li><a href="../Register/Register.php">Register</a></li>
                     <li class="search-bar">
                         <input type="text" placeholder="Search...">
                     </li>
