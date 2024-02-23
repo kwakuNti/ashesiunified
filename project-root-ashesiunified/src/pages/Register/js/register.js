@@ -1,3 +1,7 @@
+function redirectToLogin() {
+    window.location.href = "../Login/Login.php";
+}
+
 function toggleDetails() {
     var studentDetails = document.getElementById("studentDetails");
     var staffDetails = document.getElementById("staffDetails");

@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <form action="../dashboard/dashboard.php" method="post" id="registerForm" name="registerForm">
+        <form action="" method="post" id="registerForm" name="registerForm">
             <h1>Register</h1>
             <div class="input-box">
                 <input type="text" placeholder="First Name" name="first_name" required id="first_name">
@@ -93,7 +93,7 @@
             </div>
 
             
-            <button type="submit" class="btn" id="register" name="register">Register</button>
+            <button type="button" class="btn" id="register" name="register" onclick="redirectToLogin()">Register</button>
             <div class="register-link">
                 <p>Already have an account? <a href="../Login/Login.php">Login</a></p>
             </div>

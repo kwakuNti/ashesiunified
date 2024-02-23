@@ -3,7 +3,7 @@
     if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
         $uri .= 's';
     }
-    $uri .= '://' . $_SERVER['HTTP_HOST'] . '/Project/pages/Login/Login.html';
+    $uri .= '://' . $_SERVER['HTTP_HOST'] . '/Project/pages/Home/home.php';
     
     header('Location: ' . $uri);
     exit;
