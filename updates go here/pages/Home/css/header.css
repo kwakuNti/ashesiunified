@@ -1,0 +1,88 @@
+.full-page {
+    height: 100%;
+    width: 100%;
+}
+
+/* dimensions of nav bar */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 30px;
+    padding-top: 30px;
+    margin-bottom: 5px auto;
+    background: linear-gradient(180deg, rgba(100, 100, 100, 0.8), rgba(100, 100, 100, 0)); /* Grey-colored gradient */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+/* Arranges Nav items to the far right */
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+/* Arranges Nav items horizontally */
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end; /* Align items to the right */
+}
+
+/* Spaces out Nav items */
+nav ul li {
+    margin-right: 20px; /* Adjust spacing between navigation items */
+}
+
+/* Gives more description to Nav. eg, White Colour */
+nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff; /* White color for text */
+    font-family: sans-serif;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+nav ul li a:hover {
+    color: #b83838;
+}
+
+/* Description for Ashesi. Unified */
+a {
+    text-decoration: none;
+    color: palevioletred;
+    font-size: 28px;
+}
+
+/* Set size of logo image */
+.logo img {
+    height: 40px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Search bar styling */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.search-bar input[type="text"] {
+    padding: 2px;
+    border: none;
+    border-radius: 20px; /* Curved edges */
+}
+
+.search-bar button {
+    padding: 0px 5px;
+    border: none;
+    border-radius: 0px; /* Curved edges */
+    background-color: #fff; /* White background */
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #ccc; /* Light grey background on hover */
+}
