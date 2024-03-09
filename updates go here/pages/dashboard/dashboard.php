@@ -39,19 +39,19 @@ checkLogin()
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="../Department/department.php">
 					<i class='bx bxs-doughnut-chart' ></i>
 					<span class="text">Departments</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="../Chat/chat.php">
 					<i class='bx bxs-message-dots' ></i>
 					<span class="text">Message</span>
 				</a>
 			</li>
 			<li>
-				<a href="../dashboard/calender.php">
+				<a href="../Calender/calendar.php">
 					<i class='bx bxs-calendar-check' ></i>
 					<span class="text">Calender</span>
 				</a>

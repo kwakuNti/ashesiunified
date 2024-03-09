@@ -14,7 +14,7 @@
       <form action="../../backend/actions/login_user_action.php" id="loginForm" name="loginForm" method="post">
         <h1>Login</h1>
         <div class="input-box">
-          <input type="email" placeholder="Email" name="email" id="email" required pattern="[a-zA-Z0-9._%+-]+@ashesi\.edu\.gh$" title="Please enter a valid Ashesi University email address">
+          <input type="email" placeholder="Email" name="email" id="email" required pattern="^[a-zA-Z0-9._%+-]+@(ashesi\.edu\.gh|aucampus\.onmicrosoft\.com)$" title="Please enter a valid Ashesi University email address">
           <i class='bx bx-mail-send'></i>
         </div>
         <div class="input-box">

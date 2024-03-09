@@ -38,10 +38,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Set session variables
             $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['role_id'] = $user['role_id'];
+            $_SESSION['unique_id'] = $user['unique_id'];
+            
 
 
             // Redirect to dashboard
-            header("Location: ../../pages/dashboard/dashboard.php");
+            header("Location: ../../pages/dashboard/dashboard.php?msg=sucess");
             exit;
         } else {
             // Incorrect password
@@ -54,3 +56,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Invalid request method";
     exit;
 }
+

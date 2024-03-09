@@ -6,6 +6,7 @@
     <title>Register | Ashesi•Unified</title>
     <link rel="stylesheet" href="../Register/css/register.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -73,7 +74,23 @@
             <div class="register-link">
                 <p>Already have an account? <a href="../Login/Login.php">Login</a></p>
             </div>
-            <div class="feedback"></div>
+            <div class="feedback">
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    <?php
+                    if (isset($_GET['msg']) && $_GET['msg'] === "Failed to register staff. Please try again") {
+                        echo "swal('Error', 'Failed to register student. Please try again', 'error');";
+                    }
+                    if (isset($_GET['msg']) && $_GET['msg'] === "Registered Sucessfully") {
+                        echo "swal('Success', 'Registered Sucessfully', 'success');";
+                    }
+                    if (isset($_GET['msg']) && $_GET['msg'] === "User Id already registered") {
+                        echo "swal('Error', 'User Id already registered', 'error');";
+                    }
+                    ?>
+                });
+            </script>
+            </div>
         </form>
     </div>
     <script src="../Register/js/registers.js"></script>

@@ -173,7 +173,6 @@
    align-items: center;
    justify-content: center;
    padding:20px;
-   margin-top: -8%;
 }
 
 .update-profile form{
@@ -187,13 +186,19 @@
 }
 
 .update-profile form img{
+   display: block;
+   margin: 0 auto;
    height: 200px;
-   width: 200p;
+   width: 200px;
    border-radius: 50%;
    object-fit: cover;
    margin-bottom: 5px;
-}
 
+
+}
+.space{
+   height: 27.3%;
+}
 .update-profile form .flex{
    display: flex;
    justify-content: space-between;

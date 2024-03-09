@@ -61,5 +61,6 @@ checkLogin()
         </div>
       </div>
     </div>
+    <script src="../Logout/js/logout.js"></script>
   </body>
 </html>

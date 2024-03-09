@@ -6,7 +6,7 @@ session_start();
 // a function to check if the user is logged into the website
 function checkLogin() {
     if (!isset($_SESSION['user_id'])) {
-        header("Location: ../../pages/Login/login.php");
+        header("Location: ../Chat/login.php");
         exit();
     }
 }

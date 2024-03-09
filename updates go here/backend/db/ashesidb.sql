@@ -183,3 +183,13 @@ CREATE TABLE UserNotifications (
     is_read BOOLEAN DEFAULT FALSE,
     CONSTRAINT fk_user_notifications_users FOREIGN KEY (user_id) REFERENCES Users(user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+DROP TABLE IF EXISTS messages;
+
+CREATE TABLE `messages` (
+  `msg_id` int(11) NOT NULL AUTO_INCREMENT,
+  `incoming_msg_id` int(255) NOT NULL,
+  `outgoing_msg_id` int(255) NOT NULL,
+  `msg` varchar(1000) NOT NULL,
+  PRIMARY KEY (`msg_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

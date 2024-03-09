@@ -25,13 +25,13 @@ checkLogin()
 		</a>
 		<ul class="side-menu top">
             <li class="active">
-				<a href="#">
+				<a href="../Settings/settings.php">
                 <i class='bx bxs-cog' ></i>
 				<span class="text">Settings</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="../dashboard/dashboard.php">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Dashboard</span>
 				</a>
@@ -57,7 +57,7 @@ checkLogin()
 		</ul>
 		<ul class="side-menu">
 			<li>
-				<a href="#">
+				<a href="../Calender/calendar.php">
                 <i class='bx bxs-calendar-check' ></i>
 					<span class="text">Calender</span>
 				</a>
@@ -90,6 +90,7 @@ checkLogin()
     </section>
     <div class="update-profile">
    <form action="../../backend/actions/update_password_action.php" method="post" enctype="multipart/form-data">
+   <img src="../Login/images/Wangari_Mathai_Evening_Building_Lights_aesthetic.jpeg" alt="profile-picture">
 
       <div class="flex">
          <div class="inputBox">

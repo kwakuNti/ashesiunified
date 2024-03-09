@@ -1,6 +1,9 @@
 <?php
 // Include the database connection file
 include_once('../../backend/settings/connection.php');
+include_once('../../backend/settings/core.php');
+
+
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -46,30 +49,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit;
         }
 
+    
+    $unique_id = $_SESSION['unique_id'];
     $roleID = 3;
-    $statusID = 1;
+    $statusID = "Active";
     // Hash the password for secure storage
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Prepare and execute the SQL statement to insert user data into the Users table
-    $sql = "INSERT INTO Users (user_id,first_name, last_name, phone_number, date_of_birth, email, password, role_id, status_id)
+    $sql = "INSERT INTO Users (user_id,first_name, last_name, phone_number, date_of_birth, email, password, role_id, status)
             VALUES (?,?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("issssssii", $student_id, $first_name, $last_name, $phone_number, $dob, $email, $hashed_password, $roleID, $statusID);
+    $stmt->bind_param("issssssis", $student_id, $first_name, $last_name, $phone_number, $dob, $email, $hashed_password, $roleID, $statusID);
     $stmt->execute();
 
-
     // Insert data into Students table
-    $sql_student = "INSERT INTO Students (user_id,program_id, year_group)
-                    VALUES (?, ?, ?)";
+    $sql_student = "INSERT INTO Students (student_id,unique_id,program_id, year_group)
+                    VALUES (?, ?,?, ?)";
     $stmt_student = $conn->prepare($sql_student);
-    $stmt_student->bind_param("iii", $student_id,$program_id, $year_group);
+    $stmt_student->bind_param("iiii", $student_id,$unique_id,$program_id, $year_group);
     $stmt_student->execute();
 
-    $sql_pic = "INSERT INTO userprofileimages (image_id,user_id,image_path)
+    $sql_pic = "INSERT INTO userprofileimages (image_id,unique_id,image_path)
     VALUES (?, ?, ?)";
     $stmt_pic = $conn->prepare($sql_pic);
-    $stmt_pic->bind_param("iis", $image_id,$student_id,$image_path);
+    $stmt_pic->bind_param("iis", $image_id,$unique_id,$image_path);
     $stmt_pic->execute();
 
     // Check if the insertion was successful

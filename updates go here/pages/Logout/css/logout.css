@@ -5,7 +5,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body,
 input {
   font-family: "Poppins", sans-serif;
@@ -224,6 +223,11 @@ form.sign-in-form {
   height: 41px;
   font-weight: 600;
   font-size: 0.8rem;
+  transition: background-color 0.3s ease;
+}
+.btn.transparent:hover {
+  background-color: #fff;
+  color: #000;
 }
 
 .right-panel .image,
