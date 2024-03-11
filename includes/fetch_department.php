@@ -15,22 +15,22 @@ if ($result->num_rows > 0) {
         // Assigning URLs directly within the loop based on department names
         switch ($department_name) {
             case 'ASC':
-                $department_url = '../../pages/Chat/department_a_chat.php';
+                $department_url = '../templates/usersASC.php';
                 break;
             case 'SLE':
-                $department_url = '../../pages/Chat/department_b_chat.php';
+                $department_url = '../templates/usersSLE.php';
                 break;
 
             case 'ODIP':
-                $department_url = '../../pages/Chat/department_c_chat.php';
+                $department_url = '../templates/usersODIP.php';
                     break;
 
             case 'Career Services':
-                $department_url = '../../pages/Chat/department_d_chat.php';
+                $department_url = '../templates/usersCS.php';
                 break;
             
             case 'Academic Committee':
-                $department_url = '../../pages/Chat/department_e_chat.php';
+                $department_url = '../templates/usersAC.php';
                 break;
             default:
                 // Default URL or handle accordingly

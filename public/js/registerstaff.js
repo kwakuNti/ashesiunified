@@ -73,3 +73,28 @@ document.getElementById("registerForm").addEventListener("submit", function(even
     return strongPasswordRegex.test(password);
   }
   
+  form.addEventListener('submit', function(e) {
+    // Get the form data
+    let formData = new FormData(e.target);
+  
+    // Send the form data asynchronously
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', 'php/signup.php', true);
+    xhr.onload = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          let data = xhr.response;
+          if (data === 'success') {
+            // Log success message to the console
+            console.log("Form submitted successfully!");
+          } else {
+            // Handle the error response
+            errorText.style.display = 'block';
+            errorText.textContent = data;
+          }
+        }
+      }
+    };
+    xhr.send(formData);
+  });
+  
