@@ -47,7 +47,7 @@ checkLogin()
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="../templates/profile.php">
 					<i class='bx bxs-user-account' ></i>
 					<span class="text">Profile</span>
 				</a>
