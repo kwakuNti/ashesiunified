@@ -509,7 +509,7 @@ iframe#google-calendar {
   .events {
     width: 100%;
     height: 100%;
-    max-height: 600px;
+    max-height: 800px;
     overflow-x: hidden;
     overflow-y: auto;
     display: flex;
@@ -628,7 +628,7 @@ iframe#google-calendar {
     transition: max-height 0.5s ease;
   }
   .add-event-wrapper.active {
-    max-height: 300px;
+    max-height: 420px;
   }
   .add-event-header {
     width: 100%;
@@ -713,65 +713,74 @@ iframe#google-calendar {
   
   /* media queries */
   
-  @media screen and (max-width: 1000px) {
-    body {
-      align-items: flex-start;
-      justify-content: flex-start;
-    }
-    .container {
-      min-height: 100vh;
-      flex-direction: column;
-      border-radius: 0;
-    }
-    .container .left {
-      width: 100%;
-      height: 100%;
-      padding: 20px 0;
-    }
-    .container .right {
-      width: 100%;
-      height: 100%;
-      padding: 20px 0;
-    }
-    .calendar::before,
-    .calendar::after {
-      top: 100%;
-      left: 50%;
-      width: 97%;
-      height: 12px;
-      border-radius: 0 0 5px 5px;
-      transform: translateX(-50%);
-    }
-    .calendar::before {
-      width: 94%;
-      top: calc(100% + 12px);
-    }
-    .events {
-      padding-bottom: 340px;
-    }
-    .add-event-wrapper {
-      bottom: 100px;
-    }
+/* Media queries for smaller screens */
+@media screen and (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
   }
-  @media screen and (max-width: 500px) {
-    .calendar .month {
-      height: 75px;
-    }
-    .calendar .weekdays {
-      height: 50px;
-    }
-    .calendar .days .day {
-      height: 40px;
-      font-size: 0.8rem;
-    }
-    .calendar .days .day.active,
-    .calendar .days .day.today {
-      font-size: 1rem;
-    }
-    .right .today-date {
-      padding: 20px;
-    }
+  .left, .right {
+    width: 90%; /* Adjust width as needed */
+    padding: 20px;
   }
+  .calendar {
+    padding: 20px;
+    max-width: 100%; /* Adjust as needed */
+  }
+  .calendar::before, .calendar::after {
+    top: 100%;
+    left: 50%;
+    width: 97%;
+    height: 12px;
+    border-radius: 0 0 5px 5px;
+    transform: translateX(-50%);
+  }
+  .calendar::before {
+    width: 94%;
+    top: calc(100% + 12px);
+  }
+  .events {
+    padding-bottom: 340px; /* Adjust as needed */
+  }
+  .add-event-wrapper {
+    bottom: 100px; /* Adjust as needed */
+  }
+}
 
-
-
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 10px; /* Adjust as needed */
+  }
+  .left, .right {
+    width: 100%;
+  }
+  .calendar .month {
+    height: 60px; /* Adjust as needed */
+    font-size: 1rem; /* Adjust font size as needed */
+  }
+  .calendar .weekdays {
+    height: 40px; /* Adjust as needed */
+    font-size: 0.8rem; /* Adjust font size as needed */
+  }
+  .calendar .days .day {
+    height: 30px; /* Adjust as needed */
+    font-size: 0.8rem; /* Adjust font size as needed */
+  }
+  .calendar .goto-today {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .calendar .goto-today .goto {
+    height: 30px;
+  }
+  .calendar .goto-today button {
+    padding: 5px 10px;
+    font-size: 0.8rem; /* Adjust font size as needed */
+  }
+  .right .today-date {
+    padding: 10px;
+  }
+  .events {
+    padding-bottom: 100px; /* Adjust as needed */
+  }
+}

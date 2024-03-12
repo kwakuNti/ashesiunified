@@ -90,7 +90,7 @@
             
             <button type="submit" class="btn" name="register">Register</button>
             <div class="register-link">
-                <p>Already have an account? <a href="../Login/Login.php">Login</a></p>
+                <p>Already have an account? <a href="../templates/Login.php">Login</a></p>
             </div>
             <div class="feedback">
             <script>

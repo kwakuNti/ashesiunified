@@ -2,6 +2,8 @@
 include '../config/core.php';
 include '../includes/fetch_active_user.php';
 include '../actions/update_profile.php';
+include '../includes/getallevents.php';
+$upcomingEventsCount = countUpcomingEvents($conn);
 checkLogin()
 ?>
 <!DOCTYPE html>
@@ -123,13 +125,13 @@ checkLogin()
 			</div>
 
 			<ul class="box-info">
-				<li>
-					<i class='bx bxs-calendar-check' ></i>
-					<span class="text">
-						<h3>3</h3>
-						<p>Upcoming Events</p>
-					</span>
-				</li>
+			<li>
+    <i class='bx bxs-calendar-check'></i>
+    <span class="text">
+        <h3><?php echo $upcomingEventsCount; ?></h3>
+        <p>Upcoming Events</p>
+    </span>
+</li>
 				<li>
 					<i class='bx bxs-group' ></i>
 					<span class="text">
@@ -150,7 +152,7 @@ checkLogin()
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<h3>Updates/News</h3>
+						<h3>Events</h3>
 						<i class='bx bx-search' ></i>
 						<i class='bx bx-filter' ></i>
 					</div>
@@ -163,35 +165,16 @@ checkLogin()
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>
-									<p>Career Services CV Creation</p>
-								</td>
-								<td>March 5, 2024</td>
-								<td><span class="status completed">Completed</span></td>
-							</tr>
-							<tr>
-								<td>
-									<p>Meet And Greet(For first years)</p>
-								</td>
-								<td>March 12, 2024</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<p>ODIP Seminar: Strategic Planning for Institutional Growth</p>
-								</td>
-								<td>June 12, 2024</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<p>SLE Formal Dinner and Awards Ceremony</p>
-								</td>
-								<td>March 22, 2024</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-						</tbody>
+    <?php foreach ($events as $event): ?>
+    <tr>
+        <td>
+            <p><?php echo $event['event_name']; ?></p>
+        </td>
+        <td><?php echo $event['event_date']; ?></td>
+        <td><span class="status <?php echo $event['status']; ?>"><?php echo ucfirst($event['status']); ?></span></td>
+    </tr>
+    <?php endforeach; ?>
+</tbody>
 					</table>
 				</div>
 				<div class="todo">

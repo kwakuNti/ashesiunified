@@ -11,7 +11,6 @@ checkLogin()
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<link rel="stylesheet" href="../public/css/dashboard.css">
     <link rel="stylesheet" href="../public/css/settings.css">
 	<link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
@@ -35,81 +34,7 @@ checkLogin()
 <title>Settings</title>
 </head>
 <body>
-	<section id="sidebar">
-		<a href="#" class="brand">
-			<img src="../assets/images/logo-mobile.png" alt="logo>
-			<span class="text"></span>
-		</a>
-		<ul class="side-menu top">
 
-			<li>
-				<a href="../templates/dashboard.php">
-					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Dashboard</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class='bx bxs-user-account' ></i>
-					<span class="text">Profile</span>
-				</a>
-			</li>
-			<li>
-				
-				<a href="../templates/department.php">
-					<i class='bx bxs-doughnut-chart' ></i>
-					<span class="text">Departments</span>
-				</a>
-			</li>
-			
-			<li>
-				<a href="../templates/chat.php">
-					<i class='bx bxs-message-dots' ></i>
-					<span class="text">Message</span>
-				</a>
-			</li>
-			
-			<li>
-				<a href="../templates/calendar.php">
-                <i class='bx bxs-calendar-check' ></i>
-					<span class="text">Calender</span>
-				</a>
-			</li>
-			
-		</ul>
-		<ul class="side-menu">
-		<li class="active">
-				<a href="../templates/settings.php">
-                <i class='bx bxs-cog' ></i>
-				<span class="text">Settings</span>
-				</a>
-			</li>
-			
-			<li>
-            <a href="../templates/Logout.php" class="logout">
-					<i class='bx bxs-log-out-circle' ></i>
-					<span class="text">Logout</span>
-				</a>
-			</li>
-		</ul>
-	</section>
-	<!-- SIDEBAR -->
-    <section  id="content">
-    <main>
-			<div class="head-title">
-				<div class="left">
-					<h1>Settings:  <?php echo getUserFullName($_SESSION['user_id']); ?></h1>
-					<ul class="breadcrumb">
-						<li>
-							<a href="#">Dashboard</a>
-						</li>
-						<li><i class='bx bx-chevron-right' ></i></li>
-						<li>
-							<a class="active" href="#">Settings</a>
-						</li>
-					</ul>
-				</div>
-			</div>
     </section>
     <div class="update-profile">
    <form action="../actions/update_password_action.php" method="post" enctype="multipart/form-data">

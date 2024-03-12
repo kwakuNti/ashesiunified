@@ -10,3 +10,4 @@ function checkLogin() {
         exit();
     }
 }
+
