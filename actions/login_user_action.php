@@ -24,8 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $result = $stmt->get_result();
 
-
-    
     // Check if user exists
     if ($result->num_rows == 0) {
         // User not registered
@@ -38,12 +36,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Set session variables
             $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['role_id'] = $user['role_id'];
-            
 
-
-            // Redirect to dashboard
-            header("Location: ../templates/dashboard.php?msg=success");
-            exit;
+            // Redirect based on role
+            if ($user['role_id'] == 2) {
+                // Staff member
+                header("Location: ../templates/dashboard.php?msg=success");
+                exit;
+            } elseif ($user['role_id'] == 3) {
+                // Student
+                header("Location: ../templates/studentDashboard.php?msg=success");
+                exit;
+            } else {
+                header("Location: ../templates/dashboard.php?msg=success");
+                exit;
+            }
         } else {
             // Incorrect password
             header("Location: ../templates/Login.php?msg=Incorrect password");
@@ -55,4 +61,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Invalid request method";
     exit;
 }
-

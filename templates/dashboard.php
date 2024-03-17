@@ -3,6 +3,8 @@ include '../config/core.php';
 include '../includes/fetch_active_user.php';
 include '../actions/update_profile.php';
 include '../includes/getallevents.php';
+include '../includes/announce.php';
+
 $upcomingEventsCount = countUpcomingEvents($conn);
 checkLogin()
 ?>
@@ -56,12 +58,6 @@ checkLogin()
                 <a href="../templates/profile.php">
                     <i class='bx bxs-user-account'></i>
                     <span class="text">Profile</span>
-                </a>
-            </li>
-            <li>
-                <a href="../templates/department.php">
-                    <i class='bx bxs-doughnut-chart'></i>
-                    <span class="text">Departments</span>
                 </a>
             </li>
             <li>
@@ -145,10 +141,11 @@ checkLogin()
                 <li>
                     <i class='bx bxs-group'></i>
                     <span class="text">
-                        <h3>140</h3>
-                        <p>Careers</p>
+                        <h3><?php echo $announcementCount; ?></h3>
+                        <p>Announcements</p>
                     </span>
                 </li>
+
                 <li>
                     <i class='bx bxs-message-dots'></i>
                     <span class="text">

@@ -161,7 +161,7 @@ iframe#google-calendar {
   transition: width 0.3s ease;
 }
 #sidebar .side-menu li a.logout {
-  color: var(--red);
+  color: var(--light);
 }
 #sidebar .side-menu.top li a:hover {
   color: whitesmoke;

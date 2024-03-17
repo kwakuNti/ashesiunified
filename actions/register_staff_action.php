@@ -1,4 +1,3 @@
-
 <?php
 // Include the database connection file
 include '../config/connection.php';
@@ -46,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit;
         }
     
-    $roleID = 3;
+    $roleID = 2;
     $statusID = "Active";
     // Hash the password for secure storage
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
