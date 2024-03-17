@@ -5,7 +5,7 @@ include '../actions/update_profile.php';
 include '../includes/getallevents.php';
 include '../includes/announce.php';
 include '../includes/feedbackcount.php';
-$announcements = fetchAnnouncements($conn);
+$announcements = countAnnouncements($conn);
 
 $upcomingEventsCount = countUpcomingEvents($conn);
 checkLogin()

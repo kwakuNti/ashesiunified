@@ -71,7 +71,7 @@
                     <input type="number" placeholder="Staff ID" name="user_id" id="staff_id">
                 </div>
             <div class="input-box">
-                <input type="email" placeholder="Email" name="email" id="email" placeholder="abc.xyz@aucampus.onmicrosoft.com" required pattern="^[a-zA-Z0-9._%+-]+@aucampus\.onmicrosoft\.com$" title="Please enter a valid email address ending with @aucampus.onmicrosoft.com">
+                <input type="email" name="email" id="email" placeholder="Email:@aucampus.onmicrosoft.com" required pattern="^[a-zA-Z0-9._%+-]+@aucampus\.onmicrosoft\.com$" title="Please enter a valid email address ending with @aucampus.onmicrosoft.com">
                 <i class='bx bx-mail-send'></i>
             </div>
             
