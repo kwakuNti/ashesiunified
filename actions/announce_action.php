@@ -10,9 +10,9 @@ $date_today=date('Y-m-d');
 if (isset($_POST['submit'])){
     $department_id =($_POST["department_id"]);
     $announcement_title=$_POST['announcement_title'];
-    $announcement_content=$POST['announcement_content'];
-    $announcement_date=$POST['announcement_date'];
-    $created_by==$_SESSION['user_id'];
+    $announcement_content=$_POST['announcement_content'];
+    $announcement_date=$_POST['announcement_date'];
+    $created_by=$_SESSION['user_id'];
 
     $sql = "INSERT into Announcements(department_id, announcement_title, announcement_content, announcement_date,created_by ) values(?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
