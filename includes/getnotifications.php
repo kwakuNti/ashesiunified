@@ -4,7 +4,6 @@ include '../config/connection.php';
 include '../config/core.php';
 checkLogin();
 
-
 // Fetch notifications for the logged-in user from the database
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT * FROM UserNotifications WHERE user_id = '$user_id' AND is_read = 0 ORDER BY notification_date DESC";
