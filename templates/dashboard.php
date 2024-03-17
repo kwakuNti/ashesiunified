@@ -225,6 +225,27 @@ checkLogin()
             </div>
         </main>
     </section>
+    <button class="feedback-button" onclick="toggleForm()">Announcements</button>
+    <div class="form-container" style="display: none;">
+        <form action="../actions/announce_action.php" method="post">
+
+            <div class="form-group">
+                <label class="form-title">Announcements</label><br>
+                <label for="announcement_title">Announcement title:</label>
+                <textarea id="announcement_title" name="announcement_title" rows="1" cols="50"></textarea>
+
+                <div class="input-box2" id="staffDetails">
+                    <div class="input-box2">
+                    <?php include '../includes/department_fxn.php'?>
+                </div>
+                <label for="announcement_content">Announcement:</label>
+                <textarea id="announcement_content" name="announcement_content" rows="3" cols="50"></textarea>
+
+            </div>
+
+            <button type="submit" name="submit">Submit</button>
+        </form>
+    </div>
 
     <script src='../public/js/search.js'></script>
     <script src="../public/js/dashboard.js"></script>
