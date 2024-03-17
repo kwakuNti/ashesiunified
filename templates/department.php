@@ -89,10 +89,13 @@ checkLogin()
         <nav>
             <i class='bx bx-menu'></i>
             <a href="#" class="nav-link">Categories</a>
-            <form action="#">
+            <form id="searchForm" action="#" class="search-form">
                 <div class="form-input">
-                    <input type="search" placeholder="Search...">
+                    <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
                     <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+                </div>
+                <div class="result-box">
+                    <ul id="searchResults" class="search-results"></ul>
                 </div>
             </form>
             <input type="checkbox" id="switch-mode" hidden>

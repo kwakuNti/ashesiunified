@@ -1,4 +1,7 @@
-<?php include '../includes/get_event.php'; ?>
+<?php include '../includes/get_event.php';
+include '../config/core.php';
+checkLogin()
+?>
 <!DOCTYPE html>
 <html lang="en">
 

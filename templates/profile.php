@@ -3,7 +3,7 @@ include '../config/core.php';
 include '../includes/fetch_active_user.php';
 include '../actions/update_profile.php';
 include '../includes/details.php';
-
+checkLogin()
 ?>
 <!DOCTYPE html>
 <html lang="en">
