@@ -1,0 +1,44 @@
+.ticker {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    height: 30px;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 0;
+    left: 55%;
+    transform: translateX(-50%);
+}
+
+.news {
+    width: 60%; /* Reduced width */
+    background: #b83838;
+    padding: 0 2%;
+}
+
+.title {
+    width: 15%;
+    text-align: center;
+    background: #b83838;
+    position: relative;
+}
+
+.title:after {
+    position: absolute;
+    content: "";
+    right: -12%;
+    border-left: 16px solid #b83838;
+    border-top: 18px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 27px solid transparent;
+    top: 0;
+}
+
+.title h5 {
+    font-size: 14px;
+    margin: 8% 0;
+}
+
+.news marquee {
+    font-size: 14px;
+}

@@ -5,6 +5,7 @@ include '../actions/update_profile.php';
 include '../includes/getallevents.php';
 include '../includes/announce.php';
 include '../includes/feedbackcount.php';
+$announcements = fetchAnnouncements($conn);
 
 $upcomingEventsCount = countUpcomingEvents($conn);
 checkLogin()
@@ -35,6 +36,7 @@ checkLogin()
 
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../public/css/dashboard.css">
+    <link rel="stylesheet" href="../public/css/annouce.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -187,50 +189,36 @@ checkLogin()
                         <i class='bx bx-filter'></i>
                     </div>
                     <ul class="todo-list">
-                        <li class="completed">
-                            <p>Todo List</p>
+                        <?php foreach ($announcements as $announcement): ?>
+                        <li>
+                            <p><?php echo $announcement['announcement_content']; ?></p>
                             <i class='bx bx-dots-vertical-rounded'></i>
                         </li>
-                        <li class="completed">
-                            <p>Todo List</p>
-                            <i class='bx bx-dots-vertical-rounded'></i>
-                        </li>
-                        <li class="not-completed">
-                            <p>Todo List</p>
-                            <i class='bx bx-dots-vertical-rounded'></i>
-                        </li>
-                        <li class="completed">
-                            <p>Todo List</p>
-                            <i class='bx bx-dots-vertical-rounded'></i>
-                        </li>
-                        <li class="not-completed">
-                            <p>Todo List</p>
-                            <i class='bx bx-dots-vertical-rounded'></i>
-                        </li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </div>
         </main>
     </section>
     <button class="feedback-button" onclick="toggleForm()">Feedback</button>
-	<div class="form-container" style="display: none;">
+    <div class="form-container" style="display: none;">
         <form action="../actions/feedbackStudent_action.php" method="post">
-            
+
             <div class="form-group">
                 <label class="form-title">Kindly Provide Feedback</label><br>
                 <label for="feedback_content">Comments:</label>
                 <textarea id="feedback_content" name="feedback_content" rows="4" cols="50"></textarea>
-               
+
             </div>
-            
+
             <button type="submit" name="submit">Submit</button>
         </form>
     </div>
-	
 
-
+    <div id="notification-container"></div>
     <script src='../public/js/search.js'></script>
     <script src="../public/js/dashboard.js"></script>
+    <script src="../public/js/notification.js"></script>
 </body>
 
 </html>

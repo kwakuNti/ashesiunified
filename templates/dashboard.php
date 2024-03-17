@@ -70,6 +70,12 @@ checkLogin()
                 </a>
             </li>
             <li>
+                <a href="../templates/annoucement.php">
+                    <i class='bx bxs-message-dots'></i>
+                    <span class="text">Announcements</span>
+                </a>
+            </li>
+            <li>
                 <a href="../templates/calendar.php">
                     <i class='bx bxs-calendar-check'></i>
                     <span class="text">Calender</span>
