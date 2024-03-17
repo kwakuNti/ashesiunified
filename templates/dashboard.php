@@ -240,7 +240,7 @@ checkLogin()
                         <?php include '../includes/department_fxn.php'?>
                     </div>
                     <label for="announcement_content">Announcement:</label>
-                    <textarea id="announcement_content" name="announcement_content" rows="3" cols="50"></textarea>
+                    <textarea id="announcement_content" name="announcement_content" rows="1" cols="50"></textarea>
 
                 </div>
 
