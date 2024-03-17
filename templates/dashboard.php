@@ -69,12 +69,7 @@ checkLogin()
                     <span class="text">Message</span>
                 </a>
             </li>
-            <li>
-                <a href="../templates/annoucement.php">
-                    <i class='bx bxs-message-dots'></i>
-                    <span class="text">Announcements</span>
-                </a>
-            </li>
+
             <li>
                 <a href="../templates/calendar.php">
                     <i class='bx bxs-calendar-check'></i>
@@ -183,13 +178,13 @@ checkLogin()
                         <tbody>
                             <?php foreach ($feedbacks as $feedback): ?>
                             <tr>
-                                <td style= "width: 20%">
+                                <td style="width: 20%">
                                     <p><?php echo $feedback['user_name']; ?></p>
                                 </td>
-                                <td style= "width: 60%">
+                                <td style="width: 60%">
                                     <p><?php echo $feedback['feedback_content']; ?></p>
                                 </td>
-                                <td style= "width: 20%">
+                                <td style="width: 20%">
                                     <p><?php echo $feedback['feedback_date']; ?></p>
                                 </td>
 
