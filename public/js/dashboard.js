@@ -75,3 +75,18 @@ switchMode.addEventListener('change', function () {
 		document.body.classList.remove('dark');
 	}
 })
+
+//feedback
+function toggleForm() {
+    const formContainer = document.querySelector('.form-container');
+    const feedbackButton = document.querySelector('.feedback-button');
+    const closeButton = document.querySelector('.close-button'); // Add this line
+
+    if (formContainer.style.display === 'none' || formContainer.style.display === '') {
+        formContainer.style.display = 'block';
+        feedbackButton.textContent = 'Close'; // Change button text to 'Close'
+    } else {
+        formContainer.style.display = 'none';
+        feedbackButton.textContent = 'Feedback'; // Change button text back to 'Feedback'
+    }
+}

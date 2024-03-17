@@ -212,6 +212,22 @@ checkLogin()
             </div>
         </main>
     </section>
+    <button class="feedback-button" onclick="toggleForm()">Feedback</button>
+	<div class="form-container" style="display: none;">
+        <form action="../actions/feedbackStudent_action.php" method="post">
+            
+            <div class="form-group">
+                <label class="form-title">Kindly Provide Feedback</label><br>
+                <label for="feedback_content">Comments:</label>
+                <textarea id="feedback_content" name="feedback_content" rows="4" cols="50"></textarea>
+               
+            </div>
+            
+            <button type="submit" name="submit">Submit</button>
+        </form>
+    </div>
+	
+
 
     <script src='../public/js/search.js'></script>
     <script src="../public/js/dashboard.js"></script>
