@@ -1,10 +1,13 @@
 <?php
 include '../config/core.php';
+include '../config/connection.php';
 include '../includes/fetch_active_user.php';
 include '../actions/update_profile.php';
 include '../includes/getallevents.php';
+include '../includes/getallfeedback.php';
 include '../includes/announce.php';
 
+$feedbacks = fetchFeedback($conn);
 $upcomingEventsCount = countUpcomingEvents($conn);
 checkLogin()
 ?>
@@ -159,28 +162,31 @@ checkLogin()
             <div class="table-data">
                 <div class="order">
                     <div class="head">
-                        <h3>Events</h3>
+                        <h3>Student Feedback</h3>
                         <i class='bx bx-search'></i>
                         <i class='bx bx-filter'></i>
                     </div>
                     <table>
                         <thead>
                             <tr>
-                                <th>Event</th>
+                                <th>Name of Student</th>
+                                <th>Feedback</th>
                                 <th>Date</th>
-                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($events as $event): ?>
+                            <?php foreach ($feedbacks as $feedback): ?>
                             <tr>
-                                <td>
-                                    <p><?php echo $event['event_name']; ?></p>
+                                <td style= "width: 20%">
+                                    <p><?php echo $feedback['user_name']; ?></p>
                                 </td>
-                                <td><?php echo $event['event_date']; ?></td>
-                                <td><span
-                                        class="status <?php echo $event['status']; ?>"><?php echo ucfirst($event['status']); ?></span>
+                                <td style= "width: 60%">
+                                    <p><?php echo $feedback['feedback_content']; ?></p>
                                 </td>
+                                <td style= "width: 20%">
+                                    <p><?php echo $feedback['feedback_date']; ?></p>
+                                </td>
+
                             </tr>
                             <?php endforeach; ?>
                         </tbody>
