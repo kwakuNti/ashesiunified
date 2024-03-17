@@ -184,7 +184,7 @@ checkLogin()
                 </div>
                 <div class="todo">
                     <div class="head">
-                        <h3>Todos</h3>
+                        <h3>Announcements</h3>
                         <i class='bx bx-plus'></i>
                         <i class='bx bx-filter'></i>
                     </div>
