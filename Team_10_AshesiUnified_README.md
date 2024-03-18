@@ -21,45 +21,11 @@ AshesiUnified is a centralized communication platform designed to streamline inf
 
 To start using AshesiUnified:
 
-1. Install the application on your device.
+1. Click this link : **http://18.133.105.236/ashesiunified/templates/home.php** 
   
-2. Sign in with your Ashesi credentials.
+1. Navigate to Register and Sign up / Sign in with your Ashesi credentials.
   
-3. Explore the features and start communicating and collaborating efficiently.
-
-## Setting Up a Server
-
-To set up a server running AshesiUnified, follow these steps:
-
-1. **Requirements**:
-   - Make sure you have [Node.js](https://nodejs.org/) installed on your server.
-
-2. **Clone the Repository**:
-   ```
-   git clone https://github.com/kwakuNti/ashesiunified.git
-   ```
-
-3. **Install Dependencies**:
-   ```
-   cd ashesiunified
-   npm install
-   ```
-
-4. **Environment Configuration**:
-   - Create a `.env` file in the root directory.
-   - Define environment variables such as database connection settings, API keys, etc. Refer to `.env.example` for guidance.
-
-5. **Database Setup**:
-   - Set up a database according to your preferred database management system (e.g., MySQL, PostgreSQL).
-   - Update the database connection settings in the `.env` file.
-
-6. **Start the Server**:
-   ```
-   npm start
-   ```
-
-7. **Access the Application**:
-   - Once the server is running, access the application through the specified URL or port.
+2. Explore the features and start communicating and collaborating efficiently.
 
 ## Contributing
 
@@ -84,5 +50,3 @@ This project is licensed under the [MIT License](LICENSE).
 Find the project on GitHub: AshesiUnified Repository (https://github.com/kwakuNti/ashesiunified)
 
 ---
-
-Feel free to further modify or enhance the README as needed!

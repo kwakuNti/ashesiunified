@@ -20,6 +20,5 @@ if (isset($_SESSION['user_id'])) {
     }
 } else {
     // Redirect to login page if user is not logged in
-    header("location: ../login.php");
+    header("location: ../Login.php");
 }
-

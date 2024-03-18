@@ -7,6 +7,5 @@ unset($_SESSION['user_id']);
 unset($_SESSION['role_id']);
 
 
-header("Location: ../templates/login.php");
+header("Location: ../templates/Login.php");
 exit;
-

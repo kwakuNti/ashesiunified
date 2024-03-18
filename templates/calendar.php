@@ -1,7 +1,7 @@
 <?php include '../includes/get_event.php';
 include '../config/core.php';
 checkLogin()
-?>
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,13 +73,13 @@ checkLogin()
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="../templates/profile.php">
                     <i class='bx bxs-user-account'></i>
                     <span class="text">Profile</span>
                 </a>
             </li>
             <li>
-                <a href="../Chat/chat.php">
+                <a href="../templates/chat.php">
                     <i class='bx bxs-message-dots'></i>
                     <span class="text">Message</span>
                 </a>
@@ -213,7 +213,7 @@ checkLogin()
                                 <input type="text" name="event-location" placeholder="Event Location" />
                             </div>
                             <div class="add-event-input">
-                                <?php include '../includes/department_fxn.php'?>
+                                <?php include '../includes/department_fxn.php' ?>
                             </div>
 
                         </div>

@@ -5,7 +5,7 @@ include '../config/connection.php';
 // Function to fetch events with status (completed or pending)
 function fetchEvents($conn) {
     $events = array(); // Initialize an empty array to store events
-    $query = "SELECT event_title, event_date FROM events";
+    $query = "SELECT event_title, event_date FROM Events";
 
     // Execute the query
     $result = mysqli_query($conn, $query);
@@ -46,7 +46,7 @@ function countUpcomingEvents($conn) {
     $currentDate = date('Y-m-d');
 
     // Query to count the number of upcoming events
-    $query = "SELECT COUNT(*) AS upcoming_events_count FROM events WHERE event_date > '$currentDate'";
+    $query = "SELECT COUNT(*) AS upcoming_events_count FROM Events WHERE event_date > '$currentDate'";
     $result = mysqli_query($conn, $query);
 
     // Check if the query was successful

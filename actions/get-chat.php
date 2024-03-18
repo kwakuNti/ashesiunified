@@ -9,7 +9,7 @@ if(isset($_SESSION['user_id'])) {
 
     $sql = "SELECT m.msg, m.msg_id, m.incoming_msg_id, m.outgoing_msg_id, u.first_name, u.last_name, u.img
     FROM messages m
-    LEFT JOIN users u ON u.user_id = m.outgoing_msg_id
+    LEFT JOIN Users u ON u.User_id = m.outgoing_msg_id
     WHERE (m.outgoing_msg_id = {$outgoing_id} AND m.incoming_msg_id = {$incoming_id})
        OR (m.outgoing_msg_id = {$incoming_id} AND m.incoming_msg_id = {$outgoing_id})
     ORDER BY m.msg_id ASC";

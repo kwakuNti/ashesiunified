@@ -7,7 +7,7 @@ include '../includes/getallevents.php';
 // Function to search for departments
 function searchDepartments($conn, $term) {
     $termWildcard = '%' . $term . '%';
-    $sql = "SELECT * FROM departments WHERE department_name LIKE ?";
+    $sql = "SELECT * FROM Departments WHERE department_name LIKE ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $termWildcard);
     $stmt->execute();
@@ -18,7 +18,7 @@ function searchDepartments($conn, $term) {
 // Function to search for users
 function searchUsers($conn, $term) {
     $termWildcard = '%' . $term . '%';
-    $sql = "SELECT * FROM users WHERE first_name LIKE ?";
+    $sql = "SELECT * FROM Users WHERE first_name LIKE ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $termWildcard);
     $stmt->execute();
@@ -29,7 +29,7 @@ function searchUsers($conn, $term) {
 // Function to search for upcoming events
 function searchEvents($conn, $term) {
     $termWildcard = '%' . $term . '%';
-    $sql = "SELECT * FROM events WHERE event_title LIKE ?";
+    $sql = "SELECT * FROM Events WHERE event_title LIKE ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $termWildcard);
     $stmt->execute();

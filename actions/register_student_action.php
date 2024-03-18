@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt_student->bind_param("iii", $student_id,$program_id, $year_group);
     $stmt_student->execute();
 
-    $sql_pic = "INSERT INTO userprofileimages (user_id,image_path)
+    $sql_pic = "INSERT INTO UserProfileImages (user_id,image_path)
     VALUES (?, ?)";
     $stmt_pic = $conn->prepare($sql_pic);
     $stmt_pic->bind_param("is", $student_id,$image_path);

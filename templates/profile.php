@@ -4,7 +4,7 @@ include '../includes/fetch_active_user.php';
 include '../actions/update_profile.php';
 include '../includes/details.php';
 checkLogin()
-?>
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,7 +41,7 @@ checkLogin()
                 <li><a href="#about">Home</a></li>
                 <li><a href="../actions/redirect.php">Dashboard</a></li>
                 <li><a href="../templates/settings.php">Settings</a></li>
-                <li><a href="../templates/logout.php">Logout</a></li>
+                <li><a href="../templates/Logout.php">Logout</a></li>
             </ul>
         </div>
     </nav>

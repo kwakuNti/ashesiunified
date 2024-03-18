@@ -6,32 +6,34 @@ checkLogin()
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
-<link rel="manifest" href="../favicon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="../favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
 
-<title>Chat</title>
-<link rel="stylesheet" href="../public/css/chat.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Chat</title>
+    <link rel="stylesheet" href="../public/css/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 </head>
+
 <body>
     <div class="wrapper">
         <section class="users">
@@ -43,13 +45,28 @@ checkLogin()
                         $row = mysqli_fetch_assoc($sql);
                     }
                     ?>
-                    <img src="<?php echo ($row['img'] ? $row['img'] : 'default_profile_picture.jpg'); ?>" alt="profile-picture">
+                    <img src="<?php echo ($row['img'] ? $row['img'] : 'default_profile_picture.jpg'); ?>"
+                        alt="profile-picture">
                     <div class="details">
                         <span><?php echo $row['first_name'] . " " . $row['last_name'] ?></span>
                         <p><?php echo $row['status']; ?></p>
                     </div>
                 </div>
-                <a href="../templates/dashboard.php?php echo $row['user_id']; ?>" class="logout">Go Back</a>
+                <a href="#"
+                    onclick="redirectToDashboard(<?php echo $row['user_id']; ?>, <?php echo $_SESSION['role_id']; ?>); return false;"
+                    class="logout">Go Back</a>
+                <script>
+                function redirectToDashboard(userId, roleId) {
+                    if (roleId == 3) {
+                        window.location.href = '../templates/studentDashboard.php?user_id=' + userId;
+                    } else if (roleId == 2) {
+                        window.location.href = '../templates/dashboard.php?user_id=' + userId;
+                    } else {
+                        // Handle other role IDs or scenarios as needed
+                        window.location.href = '../templates/dashboard.php?user_id=' + userId;
+                    }
+                }
+                </script>
             </header>
             <div class="search">
                 <span class="text">Select a user to start chat</span>
@@ -64,4 +81,5 @@ checkLogin()
     <script src="../public/js/usersODIP.js"></script>
 
 </body>
+
 </html>
