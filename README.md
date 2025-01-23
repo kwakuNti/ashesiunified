@@ -62,7 +62,7 @@ cd ashesiunified
 - Role-based Access Control
 - Secure WebSocket Connections
 
-##📡 Key Modules
+## 📡 Key Modules
 1. Event Booking System
 
 - Department-specific event listings
@@ -76,11 +76,11 @@ cd ashesiunified
 - Secure messaging
 - Ticket/Query tracking
 
-##🤝 Contributing
+## 🤝 Contributing
 
 All development happens on main branch
 
-##📋 Project Roadmap
+## 📋 Project Roadmap
 
  Initial Authentication Module
  Service Integration Prototype
