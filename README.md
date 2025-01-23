@@ -52,6 +52,7 @@ AshesiUnified is a comprehensive web platform designed to integrate and streamli
 ```bash
 git clone https://github.com/kwakuNti/ashesiunified.git
 cd ashesiunified
+``` 
 
 
 ## 🔐 Authentication Flow
